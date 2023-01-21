@@ -6,6 +6,14 @@
   "directories": {
     "lib": "lib"
   },
+  "keywords": [
+    "markdown",
+    "lightning",
+    "language",
+    "javascript",
+    "nodejs",
+    "text"
+  ],
   "repository": "https://github.com/thethiago27/lightning-markdown",
   "files": [
     "index.js",
