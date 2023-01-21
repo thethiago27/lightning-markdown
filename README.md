@@ -52,6 +52,8 @@ npm install lightning-markdown
 
 ### Usage
 
+Live Demo: https://stackblitz.com/edit/js-va7j6t?file=index.js
+
 ```javascript
 import lightningMarkdown from "lightning-markdown";
 
