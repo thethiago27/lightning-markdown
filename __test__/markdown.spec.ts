@@ -47,6 +47,18 @@ describe("markdown test", () => {
     );
   });
 
+  it("Should render markdown with code tag", () => {
+    const text = "[code]This is code[/code]";
+    const result = serializeRichText(text);
+    expect(result).toBe("<code>This is code</code>");
+  });
+
+  it("Should render markdown with iframe tag", () => {
+    const text = "[iframe]https://www.google.com[/iframe]";
+    const result = serializeRichText(text);
+    expect(result).toBe('<iframe src="https://www.google.com" />');
+  });
+
   it("Should render markdown with title tag", () => {
     const text = "[title]This is title[/title]";
     const result = serializeRichText(text);
@@ -75,12 +87,12 @@ describe("markdown test", () => {
 
   it("Should return the complete text", () => {
     const text =
-      "[title]This is a title[/title][subtitle]This is a subtitle[/subtitle][text]This is a text[/text][text]This is a text with a hyperlink [link]https://google.com[/link][/text][image]https://www.google.com[/image][link]https://www.google.com[/link][strong]This is strong[/strong][italic]This is italic[/italic]";
+      "[title]This is a title[/title][subtitle]This is a subtitle[/subtitle][text]This is a text[/text][text]This is a text with a hyperlink [link]https://google.com[/link][/text][image]https://www.google.com[/image][link]https://www.google.com[/link][strong]This is strong[/strong][italic]This is italic[/italic][code]This is code[/code][video]https://www.google.com[/video][iframe]https://www.google.com[/iframe]";
 
     const result = serializeRichText(text);
 
     expect(result).toBe(
-      '<h1>This is a title</h1><h2>This is a subtitle</h2><p>This is a text</p><p>This is a text with a hyperlink <a href="https://google.com">https://google.com</a></p><img src="https://www.google.com" /><a href="https://www.google.com">https://www.google.com</a><strong>This is strong</strong><italic>This is italic</italic>'
+      '<h1>This is a title</h1><h2>This is a subtitle</h2><p>This is a text</p><p>This is a text with a hyperlink <a href="https://google.com">https://google.com</a></p><img src="https://www.google.com" /><a href="https://www.google.com">https://www.google.com</a><strong>This is strong</strong><italic>This is italic</italic><code>This is code</code><video controls preload="auto"><source src="https://www.google.com">Your browser does not support the video tag.</video><iframe src="https://www.google.com" />'
     );
   });
 });

@@ -27,9 +27,16 @@ const serialize = (text: string) => {
     return serializeTag("italic", p1);
   });
 
-  // Video tag with media type
   text = text.replace(/\[video\](.*?)\[\/video\]/g, (match, p1) => {
     return serializeVideo(p1);
+  });
+
+  text = text.replace(/\[code\](.*?)\[\/code\]/g, (match, p1) => {
+    return serializeTag("code", p1);
+  });
+
+  text = text.replace(/\[iframe\](.*?)\[\/iframe\]/g, (match, p1) => {
+    return serializeIframe(p1);
   });
 
   return text;
@@ -47,6 +54,10 @@ const serializeLink = (text: string) => {
   return `<a href="${text}">${text}</a>`;
 };
 
+const serializeIframe = (text: string) => {
+  return `<iframe src="${text}" />`;
+}
+
 const serializeVideo = (text: string) => {
   return `<video controls preload="auto"><source src="${text}">Your browser does not support the video tag.</video>`;
 };
@@ -61,6 +72,8 @@ const validate = (text: string) => {
     "strong",
     "italic",
     "video",
+    "code",
+    "iframe",
   ];
 
   tags.forEach((tag) => {

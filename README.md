@@ -8,6 +8,12 @@ Lightning Markdown is a powerful, programmable, markdown text editor for the web
 [text]Hello, World![/text]
 [text]This is [strong]Lightning Markdown[/strong][/text] 
 [text]This is [link]https://github.com[/link][/text] 
+[video]URL[/video]
+[italic]This is italic[/italic]
+[strong]This is strong[/strong]
+[link]URL[/link]
+[code]This is code[/code]
+[iframe]URL[/iframe]
 ```
 It will be rendered as:
 
@@ -15,6 +21,12 @@ It will be rendered as:
 <p>Hello, World!</p>
 <p>This is <b>Lightning Markdown</b></p>
 <p>This is <a href="https://github.com">https://github.com</a></p>
+<video src="URL"></video>
+<i>This is italic</i>
+<b>This is strong</b>
+<a href="URL">URL</a>
+<code>This is code</code>
+<iframe src="URL"/>
 ```
 
 Cool, isn't it?
@@ -26,10 +38,10 @@ Cool, isn't it?
 - [x] Videos
 - [x] Images
 - [x] Links
-- [ ] Code
+- [x] Code
+- [x] Iframes
 - [ ] Lists
 - [ ] Tables
-- [ ] Iframes
 
 ### Installation
 
@@ -52,7 +64,7 @@ In react:
 ```javascript
 
 import React from 'react';
-import lightningMarkdown from '@thethiago27/lightning-markdown';
+import lightningMarkdown from 'lightning-markdown';
 
 const App = () => {
   const markdown = lightningMarkdown('[text]Hello, World![/text]');
