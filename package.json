@@ -6,6 +6,7 @@
   "directories": {
     "lib": "lib"
   },
+  "repository": "https://github.com/thethiago27/lightning-markdown",
   "files": [
     "index.js",
     "index.d.ts"
