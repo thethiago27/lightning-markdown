@@ -24,7 +24,7 @@ const serialize = (text: string) => {
   });
 
   text = text.replace(/\[italic\](.*?)\[\/italic\]/g, (match, p1) => {
-    return serializeTag("italic", p1);
+    return serializeTag("i", p1);
   });
 
   text = text.replace(/\[video\](.*?)\[\/video\]/g, (match, p1) => {
@@ -55,8 +55,8 @@ const serializeLink = (text: string) => {
 };
 
 const serializeIframe = (text: string) => {
-  return `<iframe src="${text}" />`;
-}
+  return `<iframe src="${text}"></iframe>`;
+};
 
 const serializeVideo = (text: string) => {
   return `<video controls preload="auto"><source src="${text}">Your browser does not support the video tag.</video>`;

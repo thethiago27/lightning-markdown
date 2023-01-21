@@ -6,8 +6,8 @@ Lightning Markdown is a powerful, programmable, markdown text editor for the web
 
 ```text
 [text]Hello, World![/text]
-[text]This is [strong]Lightning Markdown[/strong][/text] 
-[text]This is [link]https://github.com[/link][/text] 
+[text]This is [strong]Lightning Markdown[/strong][/text]
+[text]This is [link]https://github.com[/link][/text]
 [video]URL[/video]
 [italic]This is italic[/italic]
 [strong]This is strong[/strong]
@@ -15,6 +15,7 @@ Lightning Markdown is a powerful, programmable, markdown text editor for the web
 [code]This is code[/code]
 [iframe]URL[/iframe]
 ```
+
 It will be rendered as:
 
 ```html
@@ -26,7 +27,7 @@ It will be rendered as:
 <b>This is strong</b>
 <a href="URL">URL</a>
 <code>This is code</code>
-<iframe src="URL"/>
+<iframe src="URL" />
 ```
 
 Cool, isn't it?
@@ -47,14 +48,14 @@ Cool, isn't it?
 
 ```bash
 npm install lightning-markdown
-``` 
+```
 
 ### Usage
 
 ```javascript
-import lightningMarkdown from 'lightning-markdown';
+import lightningMarkdown from "lightning-markdown";
 
-const markdown = lightningMarkdown('[text]Hello, World![/text]');
+const markdown = lightningMarkdown("[text]Hello, World![/text]");
 
 console.log(markdown);
 ```
@@ -62,19 +63,14 @@ console.log(markdown);
 In react:
 
 ```javascript
-
-import React from 'react';
-import lightningMarkdown from 'lightning-markdown';
+import React from "react";
+import lightningMarkdown from "lightning-markdown";
 
 const App = () => {
-  const markdown = lightningMarkdown('[text]Hello, World![/text]');
+  const markdown = lightningMarkdown("[text]Hello, World![/text]");
 
-  return (
-    <div dangerouslySetInnerHTML={{ __html: markdown }}>
-      {markdown}
-    </div>
-  );
-}
+  return <div dangerouslySetInnerHTML={{ __html: markdown }}>{markdown}</div>;
+};
 
 export default App;
 ```
@@ -84,4 +80,5 @@ export default App;
 MIT
 
 ### Author
+
 thethiago27

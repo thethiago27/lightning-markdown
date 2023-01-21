@@ -36,7 +36,7 @@ describe("markdown test", () => {
   it("Should render markdown with italic tag", () => {
     const text = "[italic]This is italic[/italic]";
     const result = serializeRichText(text);
-    expect(result).toBe("<italic>This is italic</italic>");
+    expect(result).toBe("<i>This is italic</i>");
   });
 
   it("Should render markdown with video tag", () => {
@@ -56,7 +56,7 @@ describe("markdown test", () => {
   it("Should render markdown with iframe tag", () => {
     const text = "[iframe]https://www.google.com[/iframe]";
     const result = serializeRichText(text);
-    expect(result).toBe('<iframe src="https://www.google.com" />');
+    expect(result).toBe('<iframe src="https://www.google.com"></iframe>');
   });
 
   it("Should render markdown with title tag", () => {
@@ -92,7 +92,7 @@ describe("markdown test", () => {
     const result = serializeRichText(text);
 
     expect(result).toBe(
-      '<h1>This is a title</h1><h2>This is a subtitle</h2><p>This is a text</p><p>This is a text with a hyperlink <a href="https://google.com">https://google.com</a></p><img src="https://www.google.com" /><a href="https://www.google.com">https://www.google.com</a><strong>This is strong</strong><italic>This is italic</italic><code>This is code</code><video controls preload="auto"><source src="https://www.google.com">Your browser does not support the video tag.</video><iframe src="https://www.google.com" />'
+      `<h1>This is a title</h1><h2>This is a subtitle</h2><p>This is a text</p><p>This is a text with a hyperlink <a href="https://google.com">https://google.com</a></p><img src="https://www.google.com" /><a href="https://www.google.com">https://www.google.com</a><strong>This is strong</strong><i>This is italic</i><code>This is code</code><video controls preload="auto"><source src="https://www.google.com">Your browser does not support the video tag.</video><iframe src="https://www.google.com"></iframe>`
     );
   });
 });
