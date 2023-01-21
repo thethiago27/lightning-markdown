@@ -34,13 +34,13 @@ Cool, isn't it?
 ### Installation
 
 ```bash
-npm install @thethiago27/lightning-markdown
+npm install lightning-markdown
 ``` 
 
 ### Usage
 
 ```javascript
-import lightningMarkdown from '@thethiago27/lightning-markdown';
+import lightningMarkdown from 'lightning-markdown';
 
 const markdown = lightningMarkdown('[text]Hello, World![/text]');
 
