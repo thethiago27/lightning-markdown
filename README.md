@@ -14,6 +14,7 @@ Lightning Markdown is a powerful, programmable, markdown text editor for the web
 [link]URL[/link]
 [code]This is code[/code]
 [iframe]URL[/iframe]
+[caption][image]URL[/image]This a Caption[/caption]
 ```
 
 It will be rendered as:
@@ -28,6 +29,10 @@ It will be rendered as:
 <a href="URL">URL</a>
 <code>This is code</code>
 <iframe src="URL" />
+<figure>
+  <img src="URL" />
+  <figcaption>This a Caption</figcaption>
+</figure>
 ```
 
 Cool, isn't it?
@@ -41,6 +46,7 @@ Cool, isn't it?
 - [x] Links
 - [x] Code
 - [x] Iframes
+- [x] Captions
 - [ ] Lists
 - [ ] Tables
 
